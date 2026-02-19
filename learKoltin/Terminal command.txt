@@ -1,0 +1,20 @@
+1. pwd                     where I am
+2. cd ..                   go up
+3. ls                      list files
+
+4. git status               repo state
+5. git clone https://...     clone project
+6. git pull                 get updates
+7. git add .                stage changes
+8. git commit -m "text"     save changes
+9. git push                 send to cloud
+
+10. git log --oneline       commits history
+11. git diff                see changes
+12. git checkout -- <file>  restore file
+13. git branch              show branches
+14. git checkout <branch>   switch branch
+15. git checkout -b <name>  new branch
+16. git merge <branch>      merge branch
+17. git stash               save changes
+18. git stash pop           return changes
