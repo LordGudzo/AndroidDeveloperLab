@@ -3,13 +3,7 @@ package com.firstproject.androidapplicationarchitecture.model
 import android.content.Context
 import org.json.JSONObject
 
-// This class is responsible for reading JSON file from assets folder
-class TextDataSource(
-
-    // We need context to access assets folder
-    private val context: Context
-
-) {
+class TextDataSource(private val context: Context) {
 
     // This function reads JSON file and returns TextModel
     fun readTextFromAssets(): TextModel {
@@ -17,13 +11,13 @@ class TextDataSource(
         // Open JSON file from assets folder
         val inputStream = context.assets.open("default.json")
 
-        // Convert input stream to string
+        // Convert input stream to string -> "{\n  \"text\": \"Hello from JSON\"\n}"
         val jsonString = inputStream.bufferedReader().use { it.readText() }
 
-        // Convert string to JSON object
+        // Convert string to JSON object -> {"text":"Hello from JSON"}
         val jsonObject = JSONObject(jsonString)
 
-        // Get value of "text" field from JSON
+        // Get value of "text" field from JSON -> "Hello from JSON"
         val textValue = jsonObject.getString("text")
 
         // Return TextModel object
