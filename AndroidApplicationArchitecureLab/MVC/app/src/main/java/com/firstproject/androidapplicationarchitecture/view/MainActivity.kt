@@ -1,7 +1,12 @@
 package com.firstproject.androidapplicationarchitecture.view
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
 import com.firstproject.androidapplicationarchitecture.controller.MainController
 import com.firstproject.androidapplicationarchitecture.controller.MainControllerFactory
 import com.firstproject.androidapplicationarchitecture.databinding.ActivityMainBinding
@@ -26,13 +31,9 @@ class MainActivity : AppCompatActivity(), MainView {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        // Create data source object
-//        val dataSource = TextDataSource(this)
-//        // Create repository object
-//        val repository = TextRepository(dataSource)
-//        // Create controller and pass View + Repository
         controller = MainControllerFactory.create(this, this)
 
+        controller.setBackground()
         controller.setText()
 
         // Set click listener for Send button
@@ -48,5 +49,12 @@ class MainActivity : AppCompatActivity(), MainView {
     override fun showText(text: String) {
         // Set text to TextView
         binding.tvText.text = text
+    }
+
+
+    override fun showBackGroundPicture(imagePath: String) {
+        Glide.with(this)
+            .load("file:///android_asset/$imagePath")
+            .into(binding.ivBackground)
     }
 }

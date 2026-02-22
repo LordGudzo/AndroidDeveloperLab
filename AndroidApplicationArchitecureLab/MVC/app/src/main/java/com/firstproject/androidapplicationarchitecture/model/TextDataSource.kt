@@ -6,7 +6,7 @@ import org.json.JSONObject
 class TextDataSource(private val context: Context) {
 
     // This function reads JSON file and returns TextModel
-    fun readTextFromAssets(): TextModel {
+    fun readJSON(): TextWithImageModel {
 
         // Open JSON file from assets folder
         val inputStream = context.assets.open("default.json")
@@ -19,8 +19,9 @@ class TextDataSource(private val context: Context) {
 
         // Get value of "text" field from JSON -> "Hello from JSON"
         val textValue = jsonObject.getString("text")
+        val imagePath = jsonObject.getString("imagePath")
 
-        // Return TextModel object
-        return TextModel(textValue)
+        // Return TextWithImageModel
+        return TextWithImageModel(textValue, imagePath)
     }
 }

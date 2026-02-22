@@ -19,9 +19,16 @@ class MainController(
         view.showText(model.text)
     }
 
+    fun setBackground() {
+        val model = repository.getText()
+        view.showBackGroundPicture(model.imagePath)
+    }
+
     // This function is called when user clicks "Send" button
     fun onSendButtonClicked(inputText: String) {
         // Send received text back to View
         view.showText(inputText)
     }
+
+
 }

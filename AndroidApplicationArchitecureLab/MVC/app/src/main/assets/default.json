@@ -1,3 +1,4 @@
 {
-  "text": "Hello from JSON file!"
+  "text": "Hello from JSON file!",
+  "imagePath": "images/bg_corridor_dark.webp"
 }

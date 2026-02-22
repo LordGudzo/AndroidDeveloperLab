@@ -5,7 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.firstproject.androidapplicationarchitecture.view.MainActivity">
+    <ImageView
+        android:id="@+id/iv_background"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:contentDescription="@null" />
 
     <TextView
         android:id="@+id/tv_Text"

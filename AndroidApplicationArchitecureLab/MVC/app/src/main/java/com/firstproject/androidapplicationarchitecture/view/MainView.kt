@@ -6,4 +6,5 @@ package com.firstproject.androidapplicationarchitecture.view
  * */
 interface MainView {
     fun showText(text: String)
+    fun showBackGroundPicture(imagePath: String)
 }
