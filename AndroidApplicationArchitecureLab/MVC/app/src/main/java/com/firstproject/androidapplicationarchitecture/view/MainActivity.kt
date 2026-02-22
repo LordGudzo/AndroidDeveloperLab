@@ -3,6 +3,7 @@ package com.firstproject.androidapplicationarchitecture.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.firstproject.androidapplicationarchitecture.controller.MainController
+import com.firstproject.androidapplicationarchitecture.controller.MainControllerFactory
 import com.firstproject.androidapplicationarchitecture.databinding.ActivityMainBinding
 import com.firstproject.androidapplicationarchitecture.model.TextDataSource
 import com.firstproject.androidapplicationarchitecture.model.TextRepository
@@ -25,12 +26,12 @@ class MainActivity : AppCompatActivity(), MainView {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Create data source object
-        val dataSource = TextDataSource(this)
-        // Create repository object
-        val repository = TextRepository(dataSource)
-        // Create controller and pass View + Repository
-        controller = MainController(this, repository)
+//        // Create data source object
+//        val dataSource = TextDataSource(this)
+//        // Create repository object
+//        val repository = TextRepository(dataSource)
+//        // Create controller and pass View + Repository
+        controller = MainControllerFactory.create(this, this)
 
         controller.setText()
 
