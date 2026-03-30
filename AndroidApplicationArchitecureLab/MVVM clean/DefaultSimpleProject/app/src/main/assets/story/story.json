@@ -1,0 +1,30 @@
+{
+  "scenes": [
+    {
+      "id": "room_night",
+      "text": "Ночь стояла тихая. В доме было слишком спокойно, будто что-то затаилось в темноте.",
+      "background": "images/bg_room_night.webp",
+      "choices": [
+        {
+          "text": "Выйти из комнаты",
+          "nextScene": "corridor"
+        },
+        {
+          "text": "Остаться у окна",
+          "nextScene": "window_thoughts"
+        }
+      ]
+    },
+    {
+      "id": "corridor",
+      "text": "Коридор встретил тебя холодом и слабым светом из приоткрытой двери внизу. Пол тихо скрипнул под шагом.",
+      "background": "images/bg_corridor_dark.webp",
+      "choices": [
+        {
+          "text": "Спуститься вниз",
+          "nextScene": "end_mystery"
+        }
+      ]
+    }
+  ]
+}
